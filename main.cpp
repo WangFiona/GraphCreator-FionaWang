@@ -137,15 +137,26 @@ int main(){
       for(int i=0; i<20; i++){
 	if(vertices[i] == remove){
 	  found = true;
-	  vertexCount--;
-	  vertices[i] = '\0';
-	  for(int j=0; j<20; j++){
+	  //vertexCount--;
+	  for(int j=i; j<20; j++){
+	    vertices[j] = vertices[j+1];
+	  }
+	  for(int h=i; h<vertexCount; h++){
+	    for(int j=0; j<vertexCount; ++j){
+	      graph[j][h] = graph[j][h+1];
+	    }
+	    for(int y=0; y<vertexCount; ++y){
+	      graph[h][y] = graph[h+1][y];
+	    }
+	  }
+	  /*for(int j=0; j<20; j++){
 	    graph[i][j] = 0;
 	    graph[j][i] = 0;
-	  }
+	    }*/
 	  cout << "Removed!" << endl;
 	}
       }
+      vertexCount--;
 
       if(!found)
 	cout << "This vertex was not found" << endl;
