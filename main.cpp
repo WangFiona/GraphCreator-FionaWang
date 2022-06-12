@@ -54,7 +54,7 @@ int main(){
     //If adding a vertex
     if(strcmp(command, "ADDV") == false){
       //Ask for a label
-      cout << "Enter a character label for the new vertex:" << endl;
+      cout << "Enter a character label for the new vertex (eg. A, B, or C)" << endl;
       char label;
       cin >> label;
       bool used = false;
@@ -150,7 +150,7 @@ int main(){
     //If removing a vertex
     else if(strcmp(command, "REMOVEV") == false){
       //Ask for the label the user wants to remove
-      cout << "Enter the vertex you want to remove" << endl;
+      cout << "Enter the vertex you want to remove (eg. A, B, or C)" << endl;
       char remove;
       cin >> remove;
       bool found = false;
